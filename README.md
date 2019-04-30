@@ -1,24 +1,30 @@
-# README
+# Shapes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup
+Clone the repo, then:
 
-Things you may want to cover:
+```
+bundle
+rails db:migrate
+rails db:seed
+rails s
+```
 
-* Ruby version
+### Testing the API
+No front end for this data, would have to test manually using a rest client. Some example API test through `restclient.el`
+```
+GET http://localhost:3000/shapes
+Content-Type: application/json
+{
+  "shape": [3, 60, 3]
+}
 
-* System dependencies
+# create
+POST http://localhost:3000/shapes
+Content-Type: application/json
+{
+  "sides": [3,2,110],
+  "angles": [1.00, 2]
+}
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
