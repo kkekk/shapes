@@ -8,6 +8,6 @@ class CreateShapeInfos < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :shape_infos, :shape_id
+    add_index :shape_infos, [:shape_id, :order], unique: true
   end
 end
